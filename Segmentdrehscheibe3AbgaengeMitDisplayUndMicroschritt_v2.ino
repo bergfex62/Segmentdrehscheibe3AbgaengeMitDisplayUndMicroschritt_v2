@@ -135,7 +135,7 @@ void setup() {
   // Pins konfigurieren
   pinMode(buttonForward, INPUT_PULLUP);
   pinMode(buttonBackward, INPUT_PULLUP);
-  pinMode(homeButton, INPUT_PULLUP);
+  pinMode(homeButton, INPUT);
   pinMode(buttonPos1, INPUT_PULLUP);
   pinMode(buttonPos2, INPUT_PULLUP);
   pinMode(buttonPos3, INPUT_PULLUP);
@@ -156,7 +156,7 @@ void setup() {
   Serial.println("Starte Homing (Referenzfahrt)...");
   
   // 1. FREIFAHREN: Wenn der Sensor beim Start aktiv ist, mit HIGH wegfahren
-  if (digitalRead(homeButton) == LOW) {
+  if (digitalRead(homeButton) == HIGH) {
     Serial.println("Sensor ist aktiv - fahre frei...");
     showStatusMessage("Sensor aktiv", "Fahre frei...");
     
